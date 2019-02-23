@@ -7,7 +7,7 @@ const MANTRA = [
     "amazing",
     "great",
     "always the best"
-]
+];
 
 /* Hotjar Tracking Code for https://babo.mingjie.codes */
 
