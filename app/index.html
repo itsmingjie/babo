@@ -23,7 +23,7 @@
         </div>
     </nav>
 
-    <section class="hero is-light">
+    <section class="hero">
         <div class="hero-body">
             <div class="container">
                 <div class="columns">
@@ -83,7 +83,7 @@
         </div>
         <div id="boba-container">
             <script id="boba-template" type="text/x-handlebars-template">
-                <div class="card" id="bobalog-{{bid}}">
+                <div class="card is-dark" id="bobalog-{{bid}}">
                         <header class="card-header">
                             <p class="card-header-title">Purchase on {{timestamp}}</p>
                             <a href="#" class="card-header-icon" aria-label="delete" onclick="deleteLog('{{bid}}')">
@@ -116,6 +116,8 @@
             </p>
         </div>
     </footer>
+
+    <script src="js/vanilla-tilt.min.js"></script>
 
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>

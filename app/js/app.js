@@ -143,6 +143,14 @@ function wipe() {
 function insertLog(boba) {
     var o = document.getElementById("boba-container").innerHTML;
     document.getElementById("boba-container").innerHTML = bobaTemp(boba) + o;
+
+    VanillaTilt.init(document.querySelector("#bobalog-" + boba.bid), {
+        gyroscope: true,
+        glare: false,
+        max: 5,
+        scale: 1.05,
+        reset: true
+    });
 }
 
 // remove a purchase log from the database
