@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="/assets/icon.png" />
+    <title>Babo: Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/master.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/app.css">
+
+<body class="hidden">
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item is-centered" href="/app/">
+                <img src="/assets/logo.svg">
+            </a>
+            <small>by <a href="https://mingjie.info">Mingjie</a></small>
+        </div>
+    </nav>
+
+    <section class="hero is-light">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-11">
+                        <h1 class="title is-spaced">
+                            Greetings! <span id="cust-greeting"></span>
+                        </h1>
+                        <h2 class="subtitle">
+                            <span id="dow"></span> <span id="digest"></span>
+                        </h2>
+                    </div>
+                    <div class="column is-1">
+                        <a class="button is-medium" id="new-lead-button"><i class="fas fa-plus-circle"></i>&nbsp;New
+                            Cup
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="new-lead" class="modal">
+        <div class="modal-background close-modal"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Create new cup of Boba</p>
+                <a class="delete close-modal" aria-label="close"></a>
+            </header>
+            <section class="modal-card-body">
+                <p class="desc">Vendor</p>
+                <input id="new-vendor" class="input" type="text" placeholder="Gong Cha" name="vendor">
+
+                <p class="desc">Price</p>
+                <input id="new-price" class="input" type="number" min="0.00" max="10000.00" step="0.01" placeholder="0.00"
+                    name="price" />
+
+                <p class="desc">Flavor</p>
+                <input id="new-flavor" class="input" type="text" placeholder="Coconut Milk" name="flavor">
+
+                <p class="desc">Size</p>
+                <input id="new-size" class="input" type="text" placeholder="Large" name="size">
+            </section>
+            <footer class="modal-card-foot">
+                <a class="button is-success" id="addBoba"><i class="fas fa-check-circle"></i>&nbsp;OK!</a>
+            </footer>
+        </div>
+    </div>
+    <div class="container" style="padding: 5px">
+        <br />
+        <h2 class="subtitle">#tbt your most recent bobas...</h2>
+        <div class="notification has-text-centered" id="is-empty">
+            <div style="padding: 20vh 0 20vh 0">
+                <h1 class="title is-1 is-spaced"><i class="fas fa-star"></i></h1>
+                <h2 class="subtitle is-3">It's Empty!</h2>
+                <p>Megan will never allow this to be empty. Now go find a boba shop, and start logging your first boba!</p>
+            </div>
+        </div>
+        <div id="boba-container">
+            <script id="boba-template" type="text/x-handlebars-template">
+                <div class="card" id="bobalog-{{bid}}">
+                        <header class="card-header">
+                            <p class="card-header-title">Purchase on {{timestamp}}</p>
+                            <a href="#" class="card-header-icon" aria-label="delete" onclick="deleteLog('{{bid}}')">
+                                <span class="icon">
+                                    <i class="far fa-trash-alt" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <h2>${{price}}</h2>
+                                <p>A cup of {{size}} {{flavor}} boba at {{vendor}}. Yum!</p>
+                            </div>
+                        </div>
+                    </div>
+            </script>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <img src="/assets/logo.svg" style="height: 1rem"> by <a href="https://github.com/itsmingjie">Mingjie
+                    Jiang</a>.
+                <br />
+                For my friend <a href="https://megancui.com">Megan</a> and many others addicted to boba.
+                <br />
+                <strong><a id="logout">Log out</a></strong>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Deferred resources -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>
+</body>
+
+</html>

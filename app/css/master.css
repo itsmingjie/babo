@@ -1,0 +1,31 @@
+body {
+    font-family: 'Comfortaa', serif;
+    /* Text is unselectable! */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+a.button {
+    border-radius: 4rem;
+    background: transparent;
+    border: 2px solid #646464;
+}
+
+a.button:hover,
+a.button:focus {
+    color: #363636;
+    border-color: #363636;
+}
+
+a.button:active {
+    transform: translateY(1px);
+}

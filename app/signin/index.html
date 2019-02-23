@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/png" href="/assets/icon.png" />
+    <title>Babo: Authentication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/master.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="signin.css">
+
+<body>
+    <div id="login">
+        <div class="login-card">
+
+            <div class="card-title">
+                <img src="/assets/logo.svg">
+                <h1 class="title">Welcome! Time to get boba-ly?</h1>
+            </div>
+
+            <div class="content">
+                <div id="signin-form">
+                    <input id="email" type="email" name="email" title="email" placeholder="Email" required autofocus>
+                    <input id="password" type="password" name="password" title="password" placeholder="Password"
+                        required>
+                    <div class="columns">
+                        <div class="column">
+                            <button class="btn btn-primary" id="login-button">Log in</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+
+    <!-- additional services -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+
+    <script src="signin.js"></script>
+</body>
+
+</html>

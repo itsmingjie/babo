@@ -1,0 +1,26 @@
+.hidden {
+    display: none;
+}
+
+.desc {
+    font-weight: bold;
+}
+
+.input {
+    margin-bottom: .8rem;
+}
+
+.card {
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.swal-text {
+    text-align: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
