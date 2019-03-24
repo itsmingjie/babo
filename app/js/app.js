@@ -3,6 +3,13 @@ var user = null;
 const source = document.getElementById("boba-template").innerHTML;
 const bobaTemp = Handlebars.compile(source);
 
+// configure timezone
+Date.prototype.toDateInputValue = function() {
+  var local = new Date(this);
+  local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+  return local.toJSON().slice(0, 10);
+};
+
 function loggedInActions(dn) {
   user = firebase.auth().currentUser;
 
@@ -79,6 +86,30 @@ function loadLogs() {
     });
 }
 
+// validate fields and call newBoba
+function validateFields() {
+  var ids = ["vendor", "price", "flavor", "size", "time"];
+  var error = document.getElementById("error-msg");
+
+  for (i = 0; i < ids.length; i++) {
+    if (document.getElementById("new-" + ids[i]).value == "") {
+      error.innerHTML = "Missing field: " + ids[i];
+      error.classList.remove("is-hidden");
+      return false;
+    }
+  }
+
+  var dt = document.getElementById("new-time").value;
+  if (new Date(dt) > new Date()) {
+    error.innerHTML = "You can't buy stuff from the future :)";
+    error.classList.remove("is-hidden");
+    return false;
+  }
+
+  //Passed!
+  newBoba();
+}
+
 // create a new boba, called by the submission button of the new modal
 function newBoba() {
   var boba = {
@@ -90,6 +121,11 @@ function newBoba() {
   };
 
   var userRef = db.collection("users").doc(user.uid);
+  var time = document.getElementById("new-time").value;
+
+  if (time != null && time != "") {
+    boba.timestamp = new Date(time);
+  }
 
   // add log to collection
   userRef
@@ -232,7 +268,7 @@ function deleteLog(bid) {
 document.getElementById("logout").addEventListener("click", startLogOut);
 document.getElementById("new-lead-button").addEventListener("click", () => {
   document.getElementById("new-lead").classList.toggle("is-active");
-  document.getElementById("addBoba").addEventListener("click", newBoba);
+  document.getElementById("addBoba").addEventListener("click", validateFields);
 });
 document.querySelectorAll(".close-modal").forEach(el => {
   el.addEventListener("click", e => {
