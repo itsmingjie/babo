@@ -1,31 +1,41 @@
 .hidden {
-    display: none;
+  display: none;
 }
 
 .desc {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .input {
-    margin-bottom: .8rem;
+  margin-bottom: 0.8rem;
 }
 
 .card {
-    border-radius: 15px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .swal-text {
-    text-align: center;
+  text-align: center;
 }
 
-.navbar-brand {
-    display: flex;
-    align-items: center;
+.header {
+  margin-top: 2.5rem;
 }
 
 .card {
-    background-color: #fff;
-    background-image: radial-gradient(ellipse at top right, #eee, transparent);
+  background-color: #fff;
+}
+
+.value-box {
+  margin-bottom: 2.5rem;
+}
+
+.title.value {
+  font-size: 5rem;
+}
+
+.footer {
+  background-color: #fff;
 }

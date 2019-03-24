@@ -13,20 +13,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/app.css">
 
 <body class="hidden">
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item is-centered" href="/app/">
-                <img src="/assets/logo.svg">
-            </a>
-            <small>by <a href="https://mingjie.info">Mingjie</a></small>
-        </div>
-    </nav>
-
-    <section class="hero">
+    <section class="hero header">
         <div class="hero-body">
             <div class="container">
-                <div class="columns">
+                <div>
+                     <span class="tag is-warning is-large value-box">    
+                        <h1 class="title value" id="totalPrice">$0</h1>
+                    </span>
+                </div>
+                <div class="columns"> 
                     <div class="column is-11">
                         <h1 class="title is-spaced">
                             Greetings! <span id="cust-greeting"></span>
@@ -36,8 +31,7 @@
                         </h2>
                     </div>
                     <div class="column is-1">
-                        <a class="button is-medium" id="new-lead-button"><i class="fas fa-plus-circle"></i>&nbsp;New
-                            Cup
+                        <a class="button is-large" id="new-lead-button"><img src="/assets/logo.svg" width="80">
                         </a>
                     </div>
                 </div>
@@ -49,7 +43,7 @@
         <div class="modal-background close-modal"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Create new cup of Boba</p>
+                <p class="modal-card-title"><img src="/assets/logo.svg" width="60"></p>
                 <a class="delete close-modal" aria-label="close"></a>
             </header>
             <section class="modal-card-body">
@@ -116,8 +110,6 @@
             </p>
         </div>
     </footer>
-
-    <script src="js/vanilla-tilt.min.js"></script>
 
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
