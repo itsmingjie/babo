@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/master.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/app.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css">
 
 <body class="hidden">
     <section class="hero header">
@@ -63,8 +64,8 @@
     </section>
 
     <div id="new-lead" class="modal">
-        <div class="modal-background close-modal"></div>
-        <div class="modal-card">
+        <div class="modal-background close-modal animated fadeIn fasterer"></div>
+        <div class="modal-card animated slideInUp">
             <header class="modal-card-head">
                 <p class="modal-card-title"><img src="/assets/logo.svg" width="60"></p>
                 <a class="delete close-modal" aria-label="close"></a>
@@ -123,7 +124,13 @@
             </script>
         </div>
     </div>
-
+    
+    <button type="button" class="ad2hs-prompt">Install Web App</button>
+    <div class="ios-prompt">
+      <span style="color: rgb(187, 187, 187); float: right; margin-top: -14px;">&times;</span>
+      <p style="margin-top: -3px; line-height: 1.8rem;">To install Babo, press <img src="/assets/icons/share.png" style="display: inline-block; margin-top: 4px; margin-bottom: -4px; height: 20px; width: auto;">
+        and then "Add to Home Screen".</p>
+    </div>
 
     <footer class="footer">
         <div class="content has-text-centered">

@@ -44,6 +44,25 @@
   line-height: 1.5;
 }
 
+.modal-background {
+  background-color: rgba(255, 255, 255, 0.86);
+}
+
+.modal#new-lead .modal-card {
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.modal#new-lead .modal-card-head,
+.modal#new-lead .modal-card-foot {
+  background-color: #ffdd57;
+  border-radius: 0;
+}
+
+.modal#new-lead .button.is-success {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 @media only screen and (max-width: 600px) {
   .title.is-spaced {
     margin-bottom: 1rem;
@@ -53,7 +72,7 @@
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 20000;
+    z-index: 20;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
 
@@ -69,4 +88,42 @@
   .logs.container {
     padding: 0 1.5rem;
   }
+
+  .modal#new-lead {
+    padding: 10px;
+  }
+}
+
+.ad2hs-prompt {
+  background-color: #ffdd57;
+  border: none;
+  display: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  width: calc(60%);
+  border-radius: 5px;
+  z-index: 50000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.ios-prompt {
+  background-color: #ffdd57;
+  border-radius: 5px;
+  display: none;
+  padding: 0.8rem 0.5rem 0.4rem 0.5rem;
+  text-decoration: none;
+  font-size: 16px;
+  color: #555;
+  position: fixed;
+  margin: 0 auto 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+  z-index: 50000;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
