@@ -39,3 +39,34 @@
 .footer {
   background-color: #fff;
 }
+
+.header span {
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 600px) {
+  .title.is-spaced {
+    margin-bottom: 1rem;
+  }
+
+  #new-lead-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 20000;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  #button-column {
+    height: 0;
+    padding: 0;
+  }
+
+  .hero-body {
+    padding-bottom: 0.75rem;
+  }
+
+  .logs.container {
+    padding: 0 1.5rem;
+  }
+}
